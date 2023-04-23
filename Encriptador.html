@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="css/estilo.css" type="text/css">
+    </head>
+    <body>
+        <main>
+            <div>
+                <img src="multimedia/Logo-1.png" id="imgLogo">
+                <input type="text" placeholder="Ingrese el texto aqui" id="txtIngrese">
+                <img src="multimedia/bi_exclamation-circle-fill.png" id="imgAdvertencia">
+                <label id="lblAdvertencia">Solo letras minisculas y sin acentos</label>
+                <button onclick="btnEncriptar()" id="btnEncriptar">Encriptar!</button>
+                <button onclick="btnDesencriptar()" id="btnDesencriptar">Desencriptar!</button>
+                <div id="divReultado">
+                    <img src="multimedia/Muñeco.png" id="imgMuñeco">
+                    <label id="lblNingun">Ningún mensaje fue encontrado</label>
+                    <label id="lblIngrese">Ingrese el texto que desees encriptar o desencriptar</label>
+                    <label id="lblResultado"></label>
+                    <button onclick="btnCopiar()" id="btnCopiar">Copiar</button>
+                </div>
+            </div>
+            <script>
+                var input = document.querySelector("input");
+                input.focus();
+                function encriptar(){
+                    var valorEncriptado = "";
+                    for(var i = 0; i < (input.value).length; i++){
+                        var revisar = false;
+                        if(input.value[i] == "e"){
+                            valorEncriptado = valorEncriptado + "enter";
+                            revisar = true;
+                        }
+                        if(input.value[i] == "i"){
+                            valorEncriptado = valorEncriptado + "imes";
+                            revisar = true;
+                        }
+                        if(input.value[i] == "a"){
+                            valorEncriptado = valorEncriptado + "ai";
+                            revisar = true;
+                        }
+                        if(input.value[i] == "o"){
+                            valorEncriptado = valorEncriptado + "ober";
+                            revisar = true;
+                        }
+                        if(input.value[i] == "u"){
+                            valorEncriptado = valorEncriptado + "ufat";
+                            revisar = true;
+                        }
+                        if(revisar == false){
+                            valorEncriptado = valorEncriptado + input.value[i];
+                            revisar = true;
+                        }
+                    }
+                    return valorEncriptado;
+                }
+                function desencriptar(){
+                    var valorDesencriptado = "";
+                    for(var i = 0; i < (input.value).length; i++){
+                        var revisar = false;
+                        if(input.value[i] == "e" && input.value[i+1] == "n" && input.value[i+2] == "t" && input.value[i+3] == "e" && input.value[i+4] == "r"){
+                            valorDesencriptado = valorDesencriptado + "e";
+                            i = i + 4;
+                            revisar = true;
+                        }
+                        if(input.value[i] == "i" && input.value[i+1] == "m" && input.value[i+2] == "e" && input.value[i+3] == "s"){
+                            valorDesencriptado = valorDesencriptado + "i";
+                            i = i + 3;
+                            revisar = true;
+                        }
+                        if(input.value[i] == "a" && input.value[i+1] == "i"){
+                            valorDesencriptado = valorDesencriptado + "a";
+                            i = i + 1;
+                            revisar = true;
+                        }
+                        if(input.value[i] == "o" && input.value[i+1] == "b" && input.value[i+2] == "e" && input.value[i+3] == "r"){
+                            valorDesencriptado = valorDesencriptado + "o";
+                            i = i + 3;
+                            revisar = true;
+                        }
+                        if(input.value[i] == "u" && input.value[i+1] == "f" && input.value[i+2] == "a" && input.value[i+3] == "t"){
+                            valorDesencriptado = valorDesencriptado + "u";
+                            i = i + 3;
+                            revisar = true;
+                        }
+                        if(revisar == false){
+                            valorDesencriptado = valorDesencriptado + input.value[i];
+                            revisar = true;
+                        }
+                    }
+                    return valorDesencriptado;
+                }
+                function btnEncriptar() {
+                    var texto = encriptar();
+                    input.value = "";
+                    input.focus();
+                    document.getElementById("lblResultado").textContent = texto;
+                    document.getElementById('imgMuñeco').style.display = 'none';
+                    document.getElementById('lblIngrese').style.display = 'none';
+                    document.getElementById('lblNingun').style.display = 'none';
+                    document.getElementById('btnCopiar').style.display = 'block';
+                }
+                function btnDesencriptar() {
+                    var texto = desencriptar();
+                    input.value = "";
+                    input.focus();
+                    document.getElementById("lblResultado").textContent = texto;
+                    document.getElementById('imgMuñeco').style.display = 'none';
+                    document.getElementById('lblIngrese').style.display = 'none';
+                    document.getElementById('lblNingun').style.display = 'none';
+                    document.getElementById('btnCopiar').style.display = 'block';
+                }
+                function copiarAlPortapapeles(id_elemento) {
+                    var aux = document.createElement("input");
+                    aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+                    document.body.appendChild(aux);
+                    aux.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(aux);
+                }
+                function btnCopiar() {
+                    copiarAlPortapapeles('lblResultado');
+                }
+            </script>
+        </main>
+        
+    </body>
+    <footer id="fosCop">
+        <p>Copyrigth &copy; 2023 Miguel Alejandro Rodriguez Cruz</p>
+    </footer>
+</html>

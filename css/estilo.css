@@ -1,0 +1,165 @@
+body{
+    background: #E5E5E5;
+}
+#divReultado{
+    position: absolute;
+    width: 375px;
+    height: 600px;
+    left: 900px;
+    top: 40px;
+    background: #FFFFFF;
+   
+    border-radius: 32px;
+}
+#txtIngrese{
+    position: absolute;
+    width: 30%;
+    height: 10%;
+    left: 18%;
+    top: 30%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 250%;
+    line-height: 150%;
+    color: #0A3871;
+    background-color: #E5E5E5;
+    border: none;
+    outline: none;
+}
+#lblNingun{
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    color: #495057;
+    position: absolute;
+    top: 60%; 
+    font-size: 30px;
+}
+#lblIngrese{
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    color: #495057;
+    position: absolute;
+    top: 75%; 
+    font-size: 18px;
+
+    
+}
+#lblResultado{
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    color: #495057;
+    position: absolute;
+    top: 15%; 
+    font-size: 35px;
+}
+#lblAdvertencia{
+    width: 10%;
+    height: 5%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 150%;
+    color: #495057;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    position: relative;
+    top: 500px; 
+    left: 20%;
+}
+#btnEncriptar{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    text-align:center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px;
+    gap: 8px;
+    width: 20%;
+    height: 8%;
+    background: #0A3871;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    position: absolute;
+    top: 550px; 
+    left: 4%;
+    font-size: 120%;
+}
+#btnDesencriptar{
+    color: #0A3871;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    text-align:center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px;
+    gap: 8px;
+    width: 20%;
+    height: 8%;
+    background: none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    position: absolute;
+    top: 550px; 
+    left: 30%;
+    font-size: 120%;
+    border-color: #0A3871;
+}
+#btnCopiar{
+    color: #0A3871;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    text-align:center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px;
+    gap: 8px;
+    width: 250px;
+    height: 50px;
+    background: none;
+    border-radius: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    position: absolute;
+    top: 90%; 
+    left: 15%;
+    font-size: 120%;
+    border-color: #0A3871;
+    display: none;
+}
+#imgLogo{
+    padding: 1%;
+    position: absolute;
+}
+#imgAdvertencia{
+    position: absolute;
+    top: 510px; 
+    left: 19%;
+}
+#imgMuñeco{
+    position: absolute;
+    top: 10%; 
+    
+}
+#fosCop{
+    position: absolute;
+    top: 600px; 
+    left: 19%;
+}
